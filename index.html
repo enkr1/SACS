@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Surface Area of Composite Solids I</title>
+    <!-- <script src="//cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.min.js"></script> -->
+    <link href="/styles.css" rel="stylesheet">
+    <script defer src="/script.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="default-main-page" id="default-main-page">
+        <img class="main-title" src="/images/title.png" alt="">
+        <img class="instructions-button" src="/images/instructions-button.png" alt="submit" id="instructions-button" />
+    </div>
+
+    <div class="instructions-page hide" id="instructions-page">
+        <div class="solid-section">
+            <img class="inst1" id="inst1" src="images/inst1.png" alt="">
+            <img class="inst2 hide" id="inst2" src="images/inst2.png" alt="">
+            <img class="inst3 hide" id="inst3" src="images/inst3.png" alt="">
+            <img class="inst4 hide" id="inst4" src="images/inst4.png" alt="">
+            <div class="box-container hide" id="box-container">
+                <div class="typing">
+                    <p class="formula" id="formula">7 x 2 + 4 x 1</p>
+                    <P class="ans" id="ans">18</P>
+                </div>
+                <img class="box" src="images/box.png" alt="">
+            </div>
+            <p>Find the surface area of the following solid.
+            </p>
+            <div class="solid-container">
+                <div id="tw" class="tw hide"></div>
+                <div id="lh" class="lh hide"></div>
+                <div id="rh" class="rh hide"></div>
+                <div id="bw" class="bw hide"></div>
+                <img class="solid-view unclickable" id="solid-view" src="images/first-solid-default.png" alt="">
+            </div>
+            <ul class="view-selection">
+                <li id="front-view" class="blink">Front View</li>
+                <li id="back-view">Back View</li>
+                <li id="top-view">Top View</li>
+                <li id="bottom-view">Bottom View</li>
+                <li id="right-view">Right View</li>
+                <li id="left-view">Left View</li>
+            </ul>
+
+        </div>
+
+        <div class="table-section" id="table-section">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Surface</th>
+                        <th>Area, cm²</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="images/frontview-selected.png" alt="" class="fv-table hide" id="fv-table"></td>
+                        <td><p class="ans-table hide" id="ans-table">18</p></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="overlay" onclick="off()">
+        <!-- <div id="text">Overlay Text</div> -->
+    </div>
+
+</body>
+
+</html>

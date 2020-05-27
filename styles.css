@@ -1,0 +1,366 @@
+/* Start global */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-background: #DCD8DC;
+    --main-colour: #AB83BA;
+    --border-colour: #806092;
+    --hover-colour: #574163;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-background);
+}
+
+p, a, li, table.table tbody td, table.table thead th, .tw::before, .lh::before, .rh::before, .bw::before {
+    /* font fam by https://www.cssfontstack.com/Century-Gothic */
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    font-size: 2.5rem;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+img {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .3s, opacity .3s linear;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s linear;
+}
+
+.selected {
+    background-color: var(--hover-colour);
+}
+
+/* front view hover  */
+
+.fvh:hover {
+    cursor: url("images/paintbrush.png"), auto;
+}
+
+.unclickable {
+    pointer-events: none;
+}
+
+.fw-selected {
+    position: absolute;
+    z-index: 999;
+    background: url("images/frontview-selected.png");
+    transition: all 0.2s ease;
+    left: 25%;
+}
+
+.lose-focus {
+    z-index: 3;
+    opacity: 0.3;
+    height: 100vh;
+    width: 100vw;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* End of global */
+
+/* Start of main page */
+
+.main-title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.instructions-button {
+    position: absolute;
+    bottom: 4rem;
+    right: 6rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.instructions-button:hover {
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+/* End of main page */
+
+/* Start of front view */
+
+.instructions-page {
+    display: flex;
+}
+
+/* solid section */
+
+.solid-section {
+    width: 60%;
+    height: 100vh;
+    text-align: center;
+    line-height: 30vh;
+}
+
+.inst1, .inst2, .inst3, .inst4 {
+    position: absolute;
+}
+
+.inst1 {
+    top: 61%;
+    left: 10%;
+}
+
+.inst2 {
+    z-index: 2;
+    top: 25%;
+    left: 12%;
+}
+
+.inst3 {
+    z-index: 1000;
+    top: 40%;
+    left: 40%;
+}
+
+.inst4 {
+    z-index: 1000;
+    top: 26%;
+    right: 12%;
+}
+
+.box-container {
+    position: absolute;
+    bottom: 10%;
+    right: 35%;
+    z-index: 1000;
+}
+
+.box {
+    z-index: 1000;
+    top: 60%;
+    left: 50%;
+}
+
+p.formula {
+    margin-top: -8rem;
+    margin-left: 3rem;
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.formula-typing {
+    animation: typing 1.5s steps(30, end) 1s .5 normal backwards;
+}
+
+p.ans {
+    position: absolute;
+    top: -10%;
+    right: 5%;
+    font-weight: bold;
+    font-size: 3rem;
+}
+p.ans-table {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.ans-typing {
+    animation: fadein 3s;
+}
+
+.solid-container {
+    height: 40vh;
+}
+
+.solid-view {
+    transform: scale(1.4);
+}
+
+.view-selection {
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; 
+    vertical-align: middle; */
+    margin: auto;
+    width: fit-content;
+    -webkit-box-shadow: 0px 0px 8px 0px var(--border-colour);
+    -moz-box-shadow: 0px 0px 8px 0px var(--border-colour);
+    box-shadow: 0px 0px 8px 0px var(--border-colour);
+    background-color: var(--main-colour);
+}
+
+.view-selection li {
+    border: 1px solid black;
+    color: #FFFFFF;
+    list-style: none;
+    text-align: center;
+    line-height: 5vh;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.view-selection li:hover {
+    background-color: var(--hover-colour);
+    transition: all 0.2s ease;
+}
+
+.tw::before, .lh::before, .rh::before, .bw::before {
+    position: absolute;
+    z-index: 99;
+}
+
+.tw::before {
+    content: '2 cm';
+    top: 8%;
+    left: 24.3%;
+}
+
+.lh::before {
+    content: '7 cm';
+    left: 19%;
+    top: 28%;
+}
+
+.rh::before {
+    content: '1 cm';
+    right: 60%;
+    top: 40%;
+}
+
+.bw::before {
+    content: '6 cm';
+    bottom: 23%;
+    left: 28%;
+}
+
+/* blinking animation */
+
+.blink {
+    animation-name: blink;
+    animation-duration: .5s;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* table section  */
+
+.table-section {
+    width: 40%;
+    height: 100vh;
+}
+
+/* https://divtable.com/table-styler/ */
+
+table.table {
+    background-color: #A1ACAD;
+    width: 60%;
+    text-align: center;
+    margin: 10rem auto;
+}
+
+table.table td, table.table th {
+    padding: 2rem 1rem;
+}
+
+table.table tr:nth-child(even) {
+    background: #C1C6C7;
+}
+
+table.table thead {
+    background: #6F8184;
+    background: -moz-linear-gradient(top, #93a0a3 0%, #7d8d90 66%, #6F8184 100%);
+    background: -webkit-linear-gradient(top, #93a0a3 0%, #7d8d90 66%, #6F8184 100%);
+    background: linear-gradient(to bottom, #93a0a3 0%, #7d8d90 66%, #6F8184 100%);
+    border-bottom: 2px solid #444444;
+}
+
+table.table thead th {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.fv-table {
+    width: auto;
+    height: 5rem;
+    margin: auto;
+
+}
+
+/* End of front view */
+
+/* Start of animation */
+
+@keyframes blink {
+    50% {
+        -webkit-box-shadow: 0px 0px 10px 0px var(--border-colour);
+        -moz-box-shadow: 0px 0px 10px 0px var(--border-colour);
+        box-shadow: 0px 0px 10px 0px var(--border-colour);
+    }
+}
+
+/* The typing effect */
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* End of animation */
